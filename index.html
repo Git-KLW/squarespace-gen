@@ -78,8 +78,13 @@ document.body.appendChild(canvas)
 console.log(window.innerWidth, window.innerHeight)
 image1.onload = function () {
 c.drawImage(layout1, 0, 0)
-console.log(c.getImageData(0,0,window.innerWidth,window.innerHeight).data)
+var data = c.getImageData(0,0,window.innerWidth,window.innerHeight)
 c.drawImage(image1, 0, 0)
+	for (y=0; y<window.innerHeight; i++) {
+		for (x=0; x<window.innerWidth; i++) {
+			console.log(x, y)
+		}
+	}
 }
 </script>
 </html>
