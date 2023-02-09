@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+</head>
+<body>
+<h1 class="heading">Hello There</h1>
+<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis molestie a iaculis at. Id aliquet lectus proin nibh. Sem et tortor consequat id porta</p>
+<button class="button">Lorem ipsum</button>
+</body>
+<script>
+var fonts = [
+    'Roboto',
+    'Open Sans',
+    'Montserrat',
+    'Lato',
+    'Raleway',
+    'Oswald',
+    'Source Sans Pro',
+    'Ubuntu',
+    'Roboto Condensed',
+    'PT Sans',
+    'Nunito',
+    'Merriweather',
+    'PT Serif',
+    'Droid Sans',
+    'Droid Serif',
+    'Lora',
+    'Roboto Slab',
+    'Playfair Display',
+    'Fira Sans',
+    'Bitter',
+    'Crimson Text',
+    'Indie Flower',
+    'Lobster',
+    'Pacifico'
+];
+var decfonts = []
+for (i=0; i<3; i++) {
+rand = Math.floor(Math.random() * fonts.length)
+WebFont.load({
+	google: {
+		families: [fonts[rand]]
+	}
+});
+decfonts.push(fonts[rand])
+}
+console.log(decfonts)
+for (i=0; i<document.getElementsByClassName('heading').length; i++) {
+document.getElementsByClassName('heading')[i].style.fontFamily = decfonts[0]
+}
+for (i=0; i<document.getElementsByClassName('paragraph').length; i++) {
+document.getElementsByClassName('paragraph')[i].style.fontFamily = decfonts[1]
+}
+for (i=0; i<document.getElementsByClassName('button').length; i++) {
+document.getElementsByClassName('button')[i].style.fontFamily = decfonts[2]
+}
+const numItemsToGenerate = 1; //how many gallery items you want on the screen
+const imageWidth = window.innerWidth; //your desired image width in pixels
+const imageHeight = window.innerHeight; //desired image height in pixels
+const collectionID = 789878; //the collection ID from the original url
+var image1 = new Image()
+var layout1 = new Image()
+function renderGalleryItem(){
+  fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/`).then((response)=> {    
+    image1.src = response.url
+  }) 
+}
+for(let i=0;i<numItemsToGenerate;i++){
+  renderGalleryItem();
+}
+layout1.src = "layout1.png"
+var canvas = document.createElement('canvas')
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+var c = canvas.getContext('2d')
+document.body.appendChild(canvas)
+console.log(window.innerWidth, window.innerHeight)
+image1.onload = function () {
+c.drawImage(layout1, 0, 0)
+console.log(c.getImageData(0,0,1,1).data)
+c.drawImage(image1, 0, 0)
+}
+</script>
+</html>
