@@ -70,7 +70,7 @@ for(let i=0;i<numItemsToGenerate;i++){
   renderGalleryItem();
 }
 layout1.src = "layout1.png"
-	var data = '';
+	var data1 = '';
 var canvas = document.createElement('canvas')
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
@@ -79,9 +79,9 @@ document.body.appendChild(canvas)
 console.log(window.innerWidth, window.innerHeight)
 image1.onload = function () {
 c.drawImage(layout1, 0, 0)
-data = c.getImageData(0,0,window.innerWidth,window.innerHeight)
+data1 = c.getImageData(0,0,window.innerWidth,window.innerHeight)
 c.drawImage(image1, 0, 0)
-console.log(data)
+console.log(data1)
 }
 </script>
 </html>
