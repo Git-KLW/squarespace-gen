@@ -86,6 +86,7 @@ var targetColor = [204, 204, 204, 255];
 var replaceImg = new Image();
 replaceImg.src = "https://git-klw.github.io/squarespace-gen/layout1.png";
 replaceImg.onload = function() {
+  replaceData.crossOrigin = 'anonymous';
   var replaceData = c.getImageData(0, 0, replaceImg.width, replaceImg.height);
   for (var i = 0; i < data1.data.length; i += 4) {
     var red = data1.data[i];
