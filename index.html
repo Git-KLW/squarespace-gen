@@ -98,6 +98,7 @@ layout1.onload = function() {
       // Replace the target color with the color of the corresponding pixel on image1
       var x = (i / 4) % canvas.width;
       var y = Math.floor((i / 4) / canvas.width);
+	    c.drawImage(image1, 0, 0);
       var imageData = c.getImageData(x, y, 1, 1);
       data1.data[i] = imageData.data[0];
       data1.data[i + 1] = imageData.data[1];
