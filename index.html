@@ -82,12 +82,8 @@ c.drawImage(layout1, 0, 0)
 data1 = c.getImageData(0,0,window.innerWidth,window.innerHeight)
 c.drawImage(image1, 0, 0)
 console.log(data1)
+	var replaceData = c.getImageData(0, 0, replaceImg.width, replaceImg.height);
 var targetColor = [204, 204, 204, 255];
-var replaceImg = new Image();
-replaceImg.crossOrigin = 'anonymous';
-replaceImg.src = "layout1.png";
-replaceImg.onload = function() {
-  var replaceData = c.getImageData(0, 0, replaceImg.width, replaceImg.height);
   for (var i = 0; i < data1.data.length; i += 4) {
     var red = data1.data[i];
     var green = data1.data[i + 1];
@@ -107,7 +103,6 @@ replaceImg.onload = function() {
     }
   }
   c.putImageData(data1, 0, 0);
-};
 }
 </script>
 </html>
