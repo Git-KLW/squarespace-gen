@@ -93,6 +93,11 @@ function getcoloratpoint(xvalue, yvalue) {
 	}
 layout1.onload = function() {
 	var imgdata = 0
+image1.onload = function() {
+  c.drawImage(image1, 0, 0);
+  imgdata = c.getImageData(0, 0, canvas.width, canvas.height);
+
+  // Get the color of the pixel at the given x and y location
   c.drawImage(layout1, 0, 0);
   var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
 var targetColor = [204, 204, 204, 255];
@@ -109,6 +114,7 @@ for (var i = 0; i < data1.data.length; i += 4) {
   }
 }
 c.putImageData(data1, 0, 0);
+}
 };
 </script>
 </html>
