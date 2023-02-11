@@ -80,9 +80,7 @@ document.body.appendChild(canvas)
 console.log(window.innerWidth, window.innerHeight)
 layout1.onload = function() {
   c.drawImage(layout1, 0, 0);
-};
-
-var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
+	var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
 var targetColor = [204, 204, 204, 255];
 for (var i = 0; i < data1.data.length; i += 4) {
   var red = data1.data[i];
@@ -97,5 +95,6 @@ for (var i = 0; i < data1.data.length; i += 4) {
   }
 }
 c.putImageData(data1, 0, 0);
+};
 </script>
 </html>
