@@ -119,6 +119,21 @@ var y = Math.floor((i / 4) / canvas.width);
 	  data1.data[i+3] = getcoloratpoint(x, y).split(", ")[3];
 	  testdata = data1.data
   }
+	var targetColor = [255, 255, 255, 255];
+for (var i = 0; i < data1.data.length; i += 4) {
+  var red = data1.data[i];
+  var green = data1.data[i + 1];
+  var blue = data1.data[i + 2];
+  var alpha = data1.data[i + 3];
+  if (red === targetColor[0] &&
+      green === targetColor[1] &&
+      blue === targetColor[2] &&
+      alpha === targetColor[3]) {
+     var x = (i / 4) % canvas.width;
+var y = Math.floor((i / 4) / canvas.width);
+	  data1.data[i+3] = 128;
+	  testdata = data1.data
+  }
 }
 c.putImageData(data1, 0, 0);
 }
