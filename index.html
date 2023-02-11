@@ -81,10 +81,10 @@ canvas.height = window.innerHeight;
 var c = canvas.getContext('2d');
 document.body.appendChild(canvas);
 console.log(window.innerWidth, window.innerHeight);
-
+var imgdata = 0
 image1.onload = function() {
   c.drawImage(image1, 0, 0);
-  var imgdata = c.getImageData(0, 0, canvas.width, canvas.height);
+  imgdata = c.getImageData(0, 0, canvas.width, canvas.height);
 
   // Get the color of the pixel at the given x and y location
 };
