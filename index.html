@@ -89,7 +89,7 @@ function getcoloratpoint(xvalue, yvalue) {
   var green = imgdata.data[index + 1];
   var blue = imgdata.data[index + 2];
   var alpha = imgdata.data[index + 3];
-  console.log("The color of the pixel at x:", x, "and y:", y, "is:", red, green, blue, alpha);
+  return red, green, blue, alpha
 	}
 	var imgdata = 0
 layout1.onload = function() {
