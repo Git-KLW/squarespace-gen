@@ -87,14 +87,16 @@ image1.onload = function() {
   var imgdata = c.getImageData(0, 0, canvas.width, canvas.height);
 
   // Get the color of the pixel at the given x and y location
-  var x = 100; // the x-coordinate of the pixel
-  var y = 200; // the y-coordinate of the pixel
+	function getcoloratpoint(xvalue, yvalue) {
+  var x = xvalue; // the x-coordinate of the pixel
+  var y = yvalue; // the y-coordinate of the pixel
   var index = (y * canvas.width + x) * 4;
   var red = imgdata.data[index];
   var green = imgdata.data[index + 1];
   var blue = imgdata.data[index + 2];
   var alpha = imgdata.data[index + 3];
   console.log("The color of the pixel at x:", x, "and y:", y, "is:", red, green, blue, alpha);
+	}
 };
 
 layout1.onload = function() {
