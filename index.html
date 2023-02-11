@@ -99,6 +99,7 @@ layout1.onload = function() {
       var x = (i / 4) % canvas.width;
       var y = Math.floor((i / 4) / canvas.width);
 	    image1.onload = function() {
+		    c.drawImage(image1, 0, 0);
       var imageData = c.getImageData(x, y, 1, 1);
       data1.data[i] = imageData.data[0];
       data1.data[i + 1] = imageData.data[1];
