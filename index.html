@@ -59,56 +59,42 @@ const numItemsToGenerate = 1; //how many gallery items you want on the screen
 const imageWidth = window.innerWidth; //your desired image width in pixels
 const imageHeight = window.innerHeight; //desired image height in pixels
 const collectionID = 789878; //the collection ID from the original url
-var image1 = new Image();
+var image1 = new Image()
 image1.crossOrigin = "anonymous";
-var layout1 = new Image();
-
-function renderGalleryItem() {
-  fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/`).then((response) => {
-    image1.src = response.url;
-  });
+var layout1 = new Image()
+function renderGalleryItem(){
+  fetch(`https://source.unsplash.com/collection/${collectionID}/${imageWidth}x${imageHeight}/`).then((response)=> {    
+    image1.src = response.url
+  }) 
 }
-
-for (let i = 0; i < numItemsToGenerate; i++) {
+for(let i=0;i<numItemsToGenerate;i++){
   renderGalleryItem();
 }
-
-layout1.src = "layout1.png";
-var data1 = '';
-var canvas = document.createElement('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-var c = canvas.getContext('2d');
-document.body.appendChild(canvas);
-console.log(window.innerWidth, window.innerHeight);
-
+layout1.src = "layout1.png"
+	var data1 = '';
+var canvas = document.createElement('canvas')
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
+var c = canvas.getContext('2d')
+document.body.appendChild(canvas)
+console.log(window.innerWidth, window.innerHeight)
 layout1.onload = function() {
   c.drawImage(layout1, 0, 0);
-  var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
-  var targetColor = [204, 204, 204, 255];
-  for (var i = 0; i < data1.data.length; i += 4) {
-    var red = data1.data[i];
-    var green = data1.data[i + 1];
-    var blue = data1.data[i + 2];
-    var alpha = data1.data[i + 3];
-    if (red === targetColor[0] &&
-        green === targetColor[1] &&
-        blue === targetColor[2] &&
-        alpha === targetColor[3]) {
-      // Replace the target color with the color of the corresponding pixel on image1
-      var x = (i / 4) % canvas.width;
-      var y = Math.floor((i / 4) / canvas.width);
-	    image1.onload = function() {
-		    c.drawImage(image1, 0, 0);
-      var imageData = c.getImageData(x, y, 1, 1);
-      data1.data[i] = imageData.data[0];
-      data1.data[i + 1] = imageData.data[1];
-      data1.data[i + 2] = imageData.data[2];
-      data1.data[i + 3] = imageData.data[3];
-	    }
-    }
+	var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
+var targetColor = [204, 204, 204, 255];
+for (var i = 0; i < data1.data.length; i += 4) {
+  var red = data1.data[i];
+  var green = data1.data[i + 1];
+  var blue = data1.data[i + 2];
+  var alpha = data1.data[i + 3];
+  if (red === targetColor[0] &&
+      green === targetColor[1] &&
+      blue === targetColor[2] &&
+      alpha === targetColor[3]) {
+    data1.data[i + 3] = 0;
   }
-  c.putImageData(data1, 0, 0);
+}
+c.putImageData(data1, 0, 0);
 };
 </script>
 </html>
