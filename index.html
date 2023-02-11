@@ -118,10 +118,10 @@ var y = Math.floor((i / 4) / canvas.width);
 	  data1.data[i+2] = getcoloratpoint(x, y).split(", ")[2];
 	  data1.data[i+3] = getcoloratpoint(x, y).split(", ")[3];
 	  testdata = data1.data
+      }
+    }
+    c.putImageData(data1, 0, 0);
   }
-c.putImageData(data1, 0, 0);
-}
-}
 };
 </script>
 </html>
