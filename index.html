@@ -78,31 +78,24 @@ canvas.height = window.innerHeight
 var c = canvas.getContext('2d')
 document.body.appendChild(canvas)
 console.log(window.innerWidth, window.innerHeight)
-image1.onload = function() {
-  var replaceCtx = document.createElement("canvas").getContext("2d");
-  replaceCtx.canvas.width = image1.width;
-  replaceCtx.canvas.height = image1.height;
-  replaceCtx.drawImage(image1, 0, 0);
-  var replaceData = replaceCtx.getImageData(0, 0, image1.width, image1.height);
-  for (var i = 0; i < data1.data.length; i += 4) {
-    var red = data1.data[i];
-    var green = data1.data[i + 1];
-    var blue = data1.data[i + 2];
-    var alpha = data1.data[i + 3];
-    if (red === targetColor[0] &&
-        green === targetColor[1] &&
-        blue === targetColor[2] &&
-        alpha === targetColor[3]) {
-      var x = (i / 4) % canvas.width;
-      var y = Math.floor((i / 4) / canvas.width);
-      var replaceIndex = (y * image1.width + x) * 4;
-      data1.data[i] = replaceData.data[replaceIndex];
-      data1.data[i + 1] = replaceData.data[replaceIndex + 1];
-      data1.data[i + 2] = replaceData.data[replaceIndex + 2];
-      data1.data[i + 3] = replaceData.data[replaceIndex + 3];
-    }
-  }
-  c.putImageData(data1, 0, 0);
+layout1.onload = function() {
+  c.drawImage(layout1, 0, 0);
 };
+
+var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
+var targetColor = [204, 204, 204, 255];
+for (var i = 0; i < data1.data.length; i += 4) {
+  var red = data1.data[i];
+  var green = data1.data[i + 1];
+  var blue = data1.data[i + 2];
+  var alpha = data1.data[i + 3];
+  if (red === targetColor[0] &&
+      green === targetColor[1] &&
+      blue === targetColor[2] &&
+      alpha === targetColor[3]) {
+    data1.data[i + 3] = 0;
+  }
+}
+c.putImageData(data1, 0, 0);
 </script>
 </html>
