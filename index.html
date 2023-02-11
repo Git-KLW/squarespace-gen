@@ -101,20 +101,20 @@ function getcoloratpoint(xvalue, yvalue) {
 layout1.onload = function() {
   c.drawImage(layout1, 0, 0);
   var data1 = c.getImageData(0, 0, canvas.width, canvas.height);
-  var targetColor = [204, 204, 204, 255];
-  for (var i = 0; i < data1.data.length; i += 4) {
-    var red = data1.data[i];
-    var green = data1.data[i + 1];
-    var blue = data1.data[i + 2];
-    var alpha = data1.data[i + 3];
-    if (red === targetColor[0] &&
-        green === targetColor[1] &&
-        blue === targetColor[2] &&
-        alpha === targetColor[3]) {
-      data1.data[i + 3] = 0;
-    }
+var targetColor = [204, 204, 204, 255];
+for (var i = 0; i < data1.data.length; i += 4) {
+  var red = data1.data[i];
+  var green = data1.data[i + 1];
+  var blue = data1.data[i + 2];
+  var alpha = data1.data[i + 3];
+  if (red === targetColor[0] &&
+      green === targetColor[1] &&
+      blue === targetColor[2] &&
+      alpha === targetColor[3]) {
+    data1.data[i + 3] = 0;
   }
-  c.putImageData(data1, 0, 0);
+}
+c.putImageData(data1, 0, 0);
 };
 </script>
 </html>
