@@ -165,7 +165,10 @@ c.putImageData(data1, 0, 0);
 	c.fillRect(startpos1[0], startpos1[1], endpos1[0] - startpos1[0] + 3, endpos1[1] - startpos1[1] + 3)
 	c.fillStyle = "black"
 	width = endpos[0] - startpos[0]
-	c.fillText("hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello", startpos[0], startpos[1])
+	placetext = "hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello"
+	textwrapnum = c.measureText(placetext).width / width
+	console.log(textwrapnum)
+	c.fillText(placetext, startpos[0], startpos[1])
 }
 };
 </script>
