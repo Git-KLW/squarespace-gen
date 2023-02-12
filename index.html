@@ -94,6 +94,8 @@ function getcoloratpoint(xvalue, yvalue) {
 	var test = 0
 	var imgdata = 0
 	var testdata = 0
+	var startpos = []
+	var endpos = []
 layout1.onload = function() {
 image1.onload = function() {
   c.drawImage(image1, 0, 0);
@@ -135,8 +137,11 @@ for (var i = 0; i < data1.data.length; i += 4) {
 	  test += 1
      var x = (i / 4) % canvas.width;
 var y = Math.floor((i / 4) / canvas.width);
-	  if (test == 1 || test == 85636) {
-		  console.log(x, y)
+	  if (test == 1) {
+		  startpos = [x, y]
+	  }
+	  if (test == 85636) {
+		  endpos = [x, y]
 	  }
     data1.data[i] = getcoloratpoint(x, y).split(", ")[0];
 	  data1.data[i+1] = getcoloratpoint(x, y).split(", ")[1];
@@ -145,6 +150,7 @@ var y = Math.floor((i / 4) / canvas.width);
 	  testdata = data1
   }
 }
+	c.fillRect(startpos[0], startpos[1], endpos[0] - startpos[0], endpos[1] - startpos[1])
 c.putImageData(data1, 0, 0);
 }
 };
