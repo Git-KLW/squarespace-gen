@@ -91,6 +91,7 @@ function getcoloratpoint(xvalue, yvalue) {
   var alpha = imgdata.data[index + 3];
   return red + ", " + green + ", " + blue + ", " + alpha
 	}
+	var test = 0
 	var imgdata = 0
 	var testdata = 0
 layout1.onload = function() {
@@ -121,7 +122,7 @@ var y = Math.floor((i / 4) / canvas.width);
   }
 }
 var targetColor = [255, 255, 255, 255];
-	var test = 0
+	test = 0
 for (var i = 0; i < data1.data.length; i += 4) {
   var red = data1.data[i];
   var green = data1.data[i + 1];
