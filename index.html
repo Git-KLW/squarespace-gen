@@ -135,7 +135,7 @@ for (var i = 0; i < data1.data.length; i += 4) {
 	  test += 1
      var x = (i / 4) % canvas.width;
 var y = Math.floor((i / 4) / canvas.width);
-	  if (test == 1) {
+	  if (test == 1 || test == 85636) {
 		  console.log(x, y)
 	  }
     data1.data[i] = getcoloratpoint(x, y).split(", ")[0];
