@@ -144,8 +144,11 @@ var y = Math.floor((i / 4) / canvas.width);
 c.putImageData(data1, 0, 0);
 }
 };
-	canvas.addEventListener('mousedown', (e) => {
-		console.log(e.clientX, e.clientY)
-	})
+	canvas.addEventListener("click", function(event) {
+  let x = event.clientX;
+  let y = event.clientY;
+
+  console.log("Mouse clicked at x: " + x + ", y: " + y);
+});
 </script>
 </html>
