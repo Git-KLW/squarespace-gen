@@ -168,10 +168,12 @@ c.putImageData(data1, 0, 0);
 	placetext = "hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello"
 	textwrapnum = Math.ceil(c.measureText(placetext).width / width)
 	listtext = placetext.split(" ")
-	listtext = listtext.slice(0, listtext.length/textwrapnum)
+	listtext = listtext.slice(0, Math.ceil(listtext.length/textwrapnum))
 	console.log(textwrapnum)
 	console.log(listtext)
-	c.fillText(placetext, startpos[0], startpos[1])
+	for (a=0; a<Math.ceil(listtext.length/textwrapnum); a++) {
+		c.fillText(placetext, startpos[0], startpos[1] + a*20)
+	}
 }
 };
 </script>
