@@ -131,6 +131,7 @@ for (var i = 0; i < data1.data.length; i += 4) {
       blue === targetColor[2] &&
       alpha === targetColor[3]) {
     data1.data[i + 3] = 0;
+	  testdata = data1
   }
 }
 c.putImageData(data1, 0, 0);
