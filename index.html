@@ -130,7 +130,12 @@ for (var i = 0; i < data1.data.length; i += 4) {
       green === targetColor[1] &&
       blue === targetColor[2] &&
       alpha === targetColor[3]) {
-    data1.data[i + 3] = 0;
+     var x = (i / 4) % canvas.width;
+var y = Math.floor((i / 4) / canvas.width);
+    data1.data[i] = getcoloratpoint(x, y).split(", ")[0];
+	  data1.data[i+1] = getcoloratpoint(x, y).split(", ")[1];
+	  data1.data[i+2] = getcoloratpoint(x, y).split(", ")[2];
+	  data1.data[i+3] = getcoloratpoint(x, y).split(", ")[3];
 	  testdata = data1
   }
 }
