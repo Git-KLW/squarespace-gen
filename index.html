@@ -166,8 +166,11 @@ c.putImageData(data1, 0, 0);
 	c.fillStyle = "black"
 	width = endpos[0] - startpos[0]
 	placetext = "hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello"
-	textwrapnum = c.measureText(placetext).width / width
+	textwrapnum = Math.ceil(c.measureText(placetext).width / width)
+	listtext = placetext.split(" ")
+	listtext = listtext.slice(0, listtext.length/textwrapnum)
 	console.log(textwrapnum)
+	console.log(listtext)
 	c.fillText(placetext, startpos[0], startpos[1])
 }
 };
