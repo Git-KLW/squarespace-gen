@@ -120,7 +120,7 @@ var y = Math.floor((i / 4) / canvas.width);
 	  testdata = data1.data
   }
 }
-	var targetColor = [255, 255, 255, 255];
+var targetColor = [255, 255, 255, 255];
 for (var i = 0; i < data1.data.length; i += 4) {
   var red = data1.data[i];
   var green = data1.data[i + 1];
@@ -130,8 +130,7 @@ for (var i = 0; i < data1.data.length; i += 4) {
       green === targetColor[1] &&
       blue === targetColor[2] &&
       alpha === targetColor[3]) {
-	  data1.data[i+3] = 128;
-	  testdata = data1.data
+    data1.data[i + 3] = 0;
   }
 }
 c.putImageData(data1, 0, 0);
