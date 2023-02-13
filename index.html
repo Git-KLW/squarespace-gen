@@ -168,6 +168,7 @@ c.putImageData(data1, 0, 0);
 	placetext = "hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello hello"
 	textwrapnum = Math.ceil(c.measureText(placetext).width / width)
 	listtext = placetext.split(" ")
+	listtext = listtext.slice(0, Math.ceil(listtext.length/textwrapnum))
 	console.log(textwrapnum)
 	console.log(listtext)
 }
