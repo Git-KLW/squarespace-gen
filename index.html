@@ -173,7 +173,7 @@ c.putImageData(data1, 0, 0);
 	textlistarr = []
 	for (a=0; a<textwrapnum; a++) {
 		console.log(a)
-		testlistarr.push(listtext.slice(0, Math.ceil(listtext.length/textwrapnum)))
+		textlistarr.push(listtext.slice(a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		c.fillText(listtext.join(" ") , startpos[0], startpos[1] + a*20)
 	}
 }
