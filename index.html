@@ -180,7 +180,7 @@ c.putImageData(data1, 0, 0);
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a]
 		if (c.measureText(val).width > width) {
-			textlistarr[a+1].unshift(val[val.length-1])
+			textlistarr[a+1] = val[val.length-1] + textlistarr[a+1]
 			val.pop()
 		}
 		c.fillText(val, 5 + startpos[0], 17 + startpos[1] + a*18)
