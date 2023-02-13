@@ -177,7 +177,7 @@ c.putImageData(data1, 0, 0);
 	console.log(decfonts[1])
 	for (a=0; a<textwrapnum; a++) {
 		console.log(a)
-		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
+		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.floor(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a].join(" ")
 		c.fillText(val, 5 + startpos[0], 15 + startpos[1] + a*17)
 	}
