@@ -171,6 +171,9 @@ c.putImageData(data1, 0, 0);
 	listtext = listtext.slice(0, Math.ceil(listtext.length/textwrapnum))
 	console.log(textwrapnum)
 	console.log(listtext)
+	for (a=0; a<textwrapnum; a++) {
+		c.fillText(listtext.join(" ") , startpos[0], startpos[1] + a*20)
+	}
 }
 };
 </script>
