@@ -165,7 +165,7 @@ c.putImageData(data1, 0, 0);
 	c.fillRect(startpos1[0], startpos1[1], endpos1[0] - startpos1[0] + 3, endpos1[1] - startpos1[1] + 3)
 	c.fillStyle = "black"
 	width = endpos[0] - startpos[0]
-	c.font = "10px " + decfonts[1];
+	c.font = "15px " + decfonts[1];
 	placetext = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis molestie a iaculis at. Id aliquet lectus proin nibh. Sem et tortor consequat id porta."
 	textwrapnum = Math.ceil(c.measureText(placetext).width / width)
 	listtext = placetext.split(" ")
@@ -177,7 +177,7 @@ c.putImageData(data1, 0, 0);
 		console.log(a)
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a].join(" ")
-		c.fillText(val, startpos[0], 15 + startpos[1] + a*15)
+		c.fillText(val, 5 + startpos[0], 15 + startpos[1] + a*15)
 	}
 	console.log(textlistarr)
 }
