@@ -183,7 +183,7 @@ c.putImageData(data1, 0, 0);
 			textlistarr[a+1] = val[val.length-1] + textlistarr[a+1]
 			val.pop()
 		}
-		c.fillText(val, 5 + startpos[0], 17 + startpos[1] + a*18)
+		c.fillText(val.join(" "), 5 + startpos[0], 17 + startpos[1] + a*18)
 	}
 	console.log(textlistarr)
 }
