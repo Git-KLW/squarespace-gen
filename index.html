@@ -176,10 +176,10 @@ c.putImageData(data1, 0, 0);
 	textlistarr = []
 	console.log(decfonts[1])
 	for (a=0; a<textwrapnum; a++) {
-		console.log(a)
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a]
-		console.log('no error')
+		nextval = textlistarr[a+1]
+		console.log(nextval)
 		if (c.measureText(val).width > width) {
 			val.pop()
 		}
