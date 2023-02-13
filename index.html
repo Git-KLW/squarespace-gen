@@ -101,6 +101,8 @@ function getcoloratpoint(xvalue, yvalue) {
 layout1.onload = function() {
 image1.onload = function() {
   c.drawImage(image1, 0, 0);
+	c.fillStyle = "rgba(0, 0, 0, 0.1)"
+	c.fillRect(0, 0, canvas.width, canvas.height)
   imgdata = c.getImageData(0, 0, canvas.width, canvas.height);
 
   // Get the color of the pixel at the given x and y location
