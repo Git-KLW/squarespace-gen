@@ -170,10 +170,6 @@ c.putImageData(data1, 0, 0);
 	listtext = placetext.split(" ")
 	console.log(textwrapnum)
 	console.log(listtext)
-	for (a=1; a<Math.ceil(textwrapnum); a++) {
-		console.log(listtext.slice(Math.ceil(listtext.length/textwrapnum)*(a-1), Math.ceil(listtext.length/textwrapnum)*a))
-		c.fillText(listtext.slice(Math.ceil(listtext.length/textwrapnum)*(a-1), Math.ceil(listtext.length/textwrapnum)*a), startpos[0], startpos[1] + a*20)
-	}
 }
 };
 </script>
