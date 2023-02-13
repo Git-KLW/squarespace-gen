@@ -180,6 +180,7 @@ c.putImageData(data1, 0, 0);
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a]
 		nextval = textlistarr[a+1]
+		console.log('no error')
 		if (c.measureText(val).width > width) {
 			nextval.push(val[val.length-1])
 			val.pop()
