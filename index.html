@@ -174,7 +174,7 @@ c.putImageData(data1, 0, 0);
 	for (a=0; a<textwrapnum; a++) {
 		console.log(a)
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
-		val = textlistarr[a]
+		val = textlistarr[a].toString()
 		c.fillText(val.replaceAll(",", " "), startpos[0], startpos[1] + a*20)
 	}
 	console.log(textlistarr)
