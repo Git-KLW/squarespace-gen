@@ -179,7 +179,7 @@ c.putImageData(data1, 0, 0);
 		console.log(a)
 		textlistarr.push(listtext.slice(Math.ceil(listtext.length/textwrapnum)*a, Math.ceil(listtext.length/textwrapnum)*(a+1)))
 		val = textlistarr[a]
-		if (c.measureText(val).width > width) {
+		if (c.measureText(val).width > width-5) {
 			if (typeof textlistarr[a+1] === 'undefined') {
 				textlistarr[a+1] = (val[val.length-1] + "").split(" ")
 			}
