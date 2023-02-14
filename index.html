@@ -188,6 +188,18 @@ c.putImageData(data1, 0, 0);
 			}
 			val.pop()
 		}
+		if (c.measureText(val).width < width-40) {
+			if (typeof textlistarr[a-1] === 'undefined') {
+				textlistarr[a-1] = undefined
+			}
+			else {
+				while (c.measureText(textlistarr[a-1]).width < width-40) {
+					textlistarr[a-1].unshift(val[0])
+					val.shift()
+				}
+			}
+			val.pop()
+		}
 		c.fillText(val.join(" "), 5 + startpos[0], 17 + startpos[1] + a*18)
 	}
 	console.log(textlistarr)
