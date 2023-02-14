@@ -190,6 +190,7 @@ c.putImageData(data1, 0, 0);
 		}
 		while (c.measureText(val).width < width-40) {
 			if (!(typeof val === 'undefined') && !(typeof textlistarr[a+1] === 'undefined')) {
+				console.log((textlistarr[a+1])[0])
 				val.unshift((textlistarr[a+1])[0])
 				textlistarr[a+1].shift((textlistarr[a+1])[0])
 			}
