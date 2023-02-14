@@ -188,12 +188,10 @@ c.putImageData(data1, 0, 0);
 			}
 			val.pop()
 		}
-		if (c.measureText(textlistarr[a-1]).width < width-40) {
-			if (!(typeof textlistarr[a-1] === 'undefined')) {
-				while (c.measureText(textlistarr[a-1]).width < width-40) {
-					textlistarr[a-1].unshift(val[0])
-					val.shift()
-				}
+		if (c.measureText(val).width < width-40) {
+			if (!(typeof val === 'undefined') && !(typeof textlistarr[a+1] === 'undefined')) {
+				val.unshift((textlistarr[a+1])[0])
+				textlistarr[a+1].shift((textlistarr[a+1])[0])
 			}
 		}
 		c.fillText(val.join(" "), 5 + startpos[0], 17 + startpos[1] + a*18)
