@@ -188,7 +188,7 @@ c.putImageData(data1, 0, 0);
 			}
 			val.pop()
 		}
-		if (c.measureText(val).width < width-40) {
+		if (c.measureText(textlistarr[a-1]).width < width-40) {
 			if (!(typeof textlistarr[a-1] === 'undefined')) {
 				while (c.measureText(textlistarr[a-1]).width < width-40) {
 					textlistarr[a-1].unshift(val[0])
